@@ -10,11 +10,10 @@ git checkout bf0b6abef5c786345482da7579569e00081c6126
 git apply --whitespace=nowarn --ignore-whitespace patch.diff
 mvn package
 cd ..
-mkdir lib
 cp secor/target/lib/* lib/
 cp secor/extraRes/messagehub.login-1.0.0.jar lib/
 cp secor/target/secor-0.1-SNAPSHOT.jar secor-0.1-SNAPSHOT.jar
-
+rm -rf secor
 pkill -f 'org.apache.zookeeper.server.quorum.QuorumPeerMain'
 sleep 2
 

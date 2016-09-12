@@ -1,153 +1,5 @@
-diff --git a/extraRes/jaas.conf b/extraRes/jaas.conf
-new file mode 100644
-index 0000000000000000000000000000000000000000..080514e491c261bff45a4cc0607c65b92685a2ac
---- /dev/null
-+++ b/extraRes/jaas.conf
-@@ -0,0 +1,6 @@
-+KafkaClient {
-+    com.ibm.messagehub.login.MessageHubLoginModule required
-+    serviceName="kafka"
-+    username="user"
-+    password="pass";
-+};
-diff --git a/extraRes/messagehub.login-1.0.0.jar b/extraRes/messagehub.login-1.0.0.jar
-new file mode 100644
-index 0000000000000000000000000000000000000000..00ae55b05071833beb4a66731046159186dbbba5
-GIT binary patch
-literal 7746
-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
-zkyW~UNqgn!E2xS11CtQ7Lh6%0A}k!Kba~<DdeA49CwN3Tn)|SsNp!uyk72i1Bd#KE
-zXrJ-1hS1e%fWJJ`kK+b=6m45Y<bM+&{N~zsu^JUDA=I?v1)k9xVV{!~wYAqi?6o~#
-zY1u~8ppOC^7Nxf&%<1T~)Kp{+5=G#LYOU+^5FNI=UhhzXdvrB@KUDiPLBa>q-A9^e
-za=4yUFw&$~6(e7vTg)(@*F-FoSP}N(V%i&2edmJ#yhcclYZbNILxLQ}099)0Hldp~
-z8C}Uns_fn)C2XBTALg~u#knRm=XgD8^IqB5B%jlnl(;!vT1MFZXf^X1B<w$}1$--i
-z%<tw1T~mm!U`=l=T~2Qg(kcgs5_qw-T7u<OZQY6&qbkYa6$FpJ*DJo9MdLKNxayWA
-zajN5k6&7W!B6)7-N$@`J0P0$zq0RAUHfrVSy~}CX!KqbGa;gUI4w8E}Jexw}Z)$tV
-z=!n~9#4oU!z9uq#FmjW!HoJhcNXLqgk<Rerlgw81C2$6{idMoh@}P9PO5eFww?7Ye
-zgtc}le3@*PwMq-U^7%d-Z1WYT_^AN%hJ{3xpi@bFD+nqU;fWB8*HdarZ{c1n#3}df
-zgmNZTK#D`@$nMY@k2^$}n=>~(D3A$1v`H?{iNKX*x+@ctRgW9;7-T}e>{>E)p6m$L
-z?2yYrwopi4(rHbrx5l35111JVhX%V%u~#D5!Nw~M9LrK}PPrM(vAH`|TJ*!!<3icS
-zy;u~DGjsR-Qbc7qlhYA|W{U$HIy8hIVYAyP*Vbf0$lM*3)v+vPFs&Mi#bxO}S{)Ph
-z&J4fVY6ZP?TKgK}U<f4m3Bp%u&7bg4Cn(v{W>+6{zLZN$p$zk(e=__CP(%}e?M~7y
-zQCvCJ<+VTW_PIv7qi|%wr%^^`7s#&{YJ#6dnJ&xOGN+1*mw76`^<32|Bdub{F-#i_
-zTi~S3Mi{kd?1^bHizgY_n>r?;_X!}0IlMt!Nw^e`nU}CBm^_Lt^q+>}s6Cy5$}qpR
-z9$ETP(6_(jl}r?(96mU{tRTw;pQ7B*g|MWXxs;AhxkvidN8WBr&MUmXEf<IPtvW0>
-zH%|LU<h-(EIgGI&2KF2;muHr@%Q|XToQUQk2v-J;#m^LTk+;h!B&rPm42<hS6Ko#}
-z_zK{C5Y3Va<LkhX`-EhQw(csgO8cf=DvMv5{aP{yz*PIHdd)w7#Xsa)`{j}$-45|t
-zrDvWZkSgv6m%*1*YX#}NFI&RTRKXT!X;0v~rbW10h2f;HDM<uQ%#Pg6roGvuHT2v1
-zugCL=R)87j7zyf4vgU?4&w^0O<MjQ*1N%7Da>G9Jc0-6I^55c7QF0EuF7r!|4Yqw=
-zaO%itkF11K2<9+DJ=MidVlaSo*93fr5OIU%*q=x>RF*#KuAQVN2MD+OhGqEGS#8Uh
-zZ%|2^FQfW3xrbs2qi36BnY`|cF>hqSLf#!~*u-Obf^C(FeOeuaQx}AT(n5$Pej-L@
-zTD78w;7+z+bfg{Cg1Rb&D2vP?2ztTebSO5tdx`Sr+&b$t`8@A-IB2;YZ#4c{Zv9KI
-zP5-+OmoTxjGc_@@l{IlNw}ZI+%Dtspdg|m562DgS1S}ezk3o`=A?SRWjT~C+D5{J>
-z#vPwrKFBL)e4xk3n5my&p8m<yyx*QNJ4vp>mFl&*yC)+UGjidRAwf<?+9Sx_wClIK
-z@2Px#?Qt^26L7j9JscXsJXw)#$`jOk@bi#4sJ@hzP|OifsuLmJ=>lNWiJr$eZzbp?
-z`<_t|2qH8pI+O1lW35GOAA#C?0pUM=o`(j+yVYU^Vz7)nN>(_pUMSnNj%3<qVanCZ
-zXteFw?a5hO>3b*Y^M#q{xTHcwp2@veelx8FX=b(-Q=7WhYAQ6N`p9%R`-ctd(lS5r
-z&Da6tjXq1MuG07F8e-}1NAHrV6+2E=kE7P=QG9RKjU!N9p0aRfj>~Uv%x(Mx4|gZ(
-zkBAH%#ixw$5)zgci7>=T%S(0C95=^;ima0zENl1&`M25orO`3ZMPM_Gx;4~J$59Vc
-z$!FYuA`Vax@UwS7Lv;YCsr2bZ;(dC(=`yBrTxV(8!{v)vqHYe)%m9x^Dk52Tian@@
-z()gS6%yv^J;)@jqA_j>`WSb*gKHxchW6?`An6FaEvbJ^u8CLh{os1AYk2d{sAZzXu
-z2LBSPBDq(O7y#l|{{lQ|sVv2f+<u4}#jm72@!2j%#S)^lF{EMX>-Z2*bTy%kV|<}m
-zF9B4)=60fgSd^-<FAE2+9)5Vdj@4EJ|8oq<;msI)Rr6}%bQF)HJm!-ES)&9G)B0D~
-ztJkBC5_HRI!I)#tbjXy}fy3%GT5NQC;=q^NB$!*=20Z3*W|WSbBHms?B_xVlMcJ7l
-z&FCV?C`f_d6RfrOqdy+pG@)%wm*l;O#uRZ~R;<#l8uDj!4ixZJhURjVjWVhjFKTRK
-zHR-SdD8_&`>ppU)8>A>Q#+N?!oei91NhX_C)#&4O{aFcp>pLZz8x&FuJoQP-G~cvr
-zi@6iW<>iOJC)i4t&5e=XaFSUG4#FQsw~GuK4jHP4B)|%_iZ;tj;eV_kjjO%*Xar)-
-z94}p&EuJb(q6^GeV|fUxiEcZ!6PbkrATBo_7AF{y&FSl)Vo}oU1xvy??vtM2?7oW}
-z)X{}=)(_IRpYcdh(;(8<Xl8^X?@*wF0Y5qCORQg`Mbc6BjGHq*yrBF<HN-z!MnS_z
-z8WWa9OM*j1dr9&n{{2OtZ1j71ixHZ4b8L(IhjgThLpT<2AfH*Y(NofPgrfzTvIRWG
-z`ap}gE?&>gX%^mbkyo#&Iw426pV`4fo9e_o;cOnU-0+F(63^yn3~iB}k_>5OX~g8?
-zj9En)_+^CxX}-Qu$)b5@s`JYKwF=LH0OyqyMy_8ae3Z;mf^9|o*fX~G!=Jx$Ss6OS
-zf>?8%S8zFad0@}pu{}hOp<Kig$HBRYz<BUjYV&LNpkE;U4>nBn?%^mol&0Wn7(N&=
-zjfp-Z2IJ{GQsX)#y33;m<0n#SX!!zTPA^&XB7)k30~DSZ95g|B<2n!Mkc9w&kQ}pm
-z5;&z4qz;DnM_ClY3fA<=Gwr&$8Ta>tpCw2eGe_DF-YuGzd*{sLo{VIJ7rMu?>Qm!s
-zbPe=EphN#)u)An~-G31My}RwtS+V>%D7*SL8<IVMgM0k{&5As~vfrC%G4ytBT&WwY
-z8ZeS~FsDAb<UYLAa7g_gqBVsLJt*56seH8^!GoD+aW>>Ijr3`s|Dn$e6&w)>?3EdP
-z@bZsI@V+!Tqq+BqVREy5WbP58K)QWZT#@s!{qs0&xzv(U-T_;^od%&M^(Z`(e0>Ht
-z)$omsXLTXmWusb`a7t^4xLqQ)4Fl0fSx;!Ln(?G3)hHq`ibFqKhGkg<&U~tC6hq|{
-z=h{NO;ttD6aFU=(!Jhr|ZkSzh3tQgy-|4qCLg*jv2E@$W#oEnN#l`WtwfVmb!5gh9
-zb%GawYd;!u2_4DYY%vw#S-9cqS)2U`efpkK#GJwwyLNG{1cT`<c(8ZXiJvo+i*l;2
-zb#GkQOl&jit`)bv7<Y!|&p8sbGjwzJcUTNgxVGLN=iArkyN=2aD7spxFM@vH<Y1Sh
-z@MKdzY^Uaw^DM;VC&6C8ijv)T5h|Ov5t{w1cW_V}^de|Td^|uBRW1rSN5MqVu!}Gc
-zK!RQt@_}$H-y1B(C@HEA4@PH1d}QH1HS|@Y@eM!wp<0Q7s6K9?RaIX}ZrZ@><mbm~
-z%YNb?=cXn{XmEF0p&*;#YKs_|r5O9vB__ngoR~n5lJXSX?LeUaim%G-ES@9zt79Cm
-zSR3hMo_>(XT9vMSyOjcY<GP!T9IVn2ee2M;AXoRv`edjpF#TKQx>aThBs7Xp&^k5L
-z6`cLv<jvD)iN4l;vTsPNO<3x??m)Dehokt`1_u@KB|%+al>xRZrJindiftuuT47wb
-zBv3fv;h4GuZF+4N7H~2_-K`<q<EdAhJ%}u~u^+J6<zC>6RT+&Hy$L0cx0_&EB06NX
-zeyxwV>oQGz<y~5zp;!ZjaYVdVgt@7`bsE>6pm^l<Rrae~IM?)ho{`b*+Un%~4SH}J
-zynSHrPBVh4PnSa=hmgn^&)4D9+$pkz<*IqfSwrI~jMr8xV|E!Nacs7!dF}~}v|X4G
-zsSAvHLT4ET!`)%VW^Ctx7Sd-0^T+~$9RuQ>9AiowZ$j<n2Z&GCvZIt(71+T`GYyp(
-zTk+z)N<~Ia@2RS`E~LB(`(JBBPP*^;Jf58#T#hZVbkOo*>n?JdFG~HK7{R!u&0V_4
-z=<wcyxQ?*7VA0n{w1@TSXBpO=d9y%D+ZRg4>Z;U)FBVwOBs&YvqA-$r!JTWoC&XuJ
-z#)FMeb>rQO(AQ0E9#)w3P&4zRb_w17at$AjrH9v4KN+uZ3eS+|&^5{pF&#Yjr(MFx
-zA_gl@Oq28*dZbG0_@)_lJj#<z0_&FRJUi2Lco$r<Vz{D*Q|h5iZwNZmyG%9l(vW8L
-zu|f^AyA*2$_{u8OR`>=6;q3)DmN$}U%X$R~djZoHxhgpukX408hH};uhQ5>gF?qfE
-z`XdC%Depc?ez)0MMYOGPhU5tPU0`V|0PBi0<ryj%X4)0wUcXoFY}QW9+-WHmDoyUF
-z%@2LaGL;^W5<WH^P-<Bsm-fcwpoD$2HYv(R`(bs+*Df+MkMQzQ;nofL^EL#L^Pb{@
-z<=m%12IB^=JvU5nPKcI$6UkE^pDu_r>^5@+8Vvy7QslWMbw9lxdlVuC85anPhkoz}
-z%3I>4zT};*zR^ac@<3HJ>^MTI=p72MS#)Gt?H$!v<K9EZ_T*Xxa}i~9alNKHmsP#S
-z_>#9y6VwKvM#wq{K*?RjJm7{1Mwkg%?gK|Sb9ZE%Ro$M6>nb0Pj4;41HLn}rI^{O>
-z_!s8$wP#Ais&WqDze0Q{L0BKl>8VY#he-}jbb?5xb$036HO8(w>7ZvkF|o`$GL^)u
-z8b83)oB^WNA-*-<l%*F8vu_*hduDfm5J;Lha~zp=?hOzx8D^*LP*wp}`eRRB#j1#0
-z2E32ildz8Z#=Ku>VB8|g`}AvEQlSZlQv4{cb@aTTz4Finf8G#0dBMUW=HOygJ!ncq
-z5LQ(c9j1ihCt9GLRm?7iPSY$uM;#Y4d`b^^-hxx`gUUD<k!PSXSZrFHjmL)>25_EC
-z8$r&xD)3k<IC<(kh(8j$d)Ts(HySekxL=+yQ+p_%x~rV`@?~k3k4e_}Cx%!TFcR^n
-zshu@uf9yF|#A|8mS9o5{M5pm|sa4c=l%B~~_d0wVy}3Zy+d9U0OIh&#v+S+nV(nmN
-z?POy2tAZt|_R1sh0G^~hg;L7s*&1=q)M%!MD0D`v=#R2$G!90Yr1RpWh0PnWFb82g
-z`xuMAYaW6AoQ~$plhZ8k0fzH4A8!<=C|?Z7);Cr0DM^^*m}G1YMT97CHI&VntDZ|d
-zc5p-|WEM^0SR;h>iP;a#>*O#Do2Ri3?;ChDb21@;bW7w5XJAg3kT%?ko_%3mr4&{Z
-z66G1@`5rV6>I6v-mo%a2*vEtiy|m78LSxGdMIs9$Bv7W2w5-Y}Bo65#=`y-oJ>fkD
-z7vz#%o(a)p7mtd#Nn@^o@DhixqaIy30mzSa4cZxYt#yPODNd|V42mIO$|sc^`{k@7
-zB;-#1(e-Ln5GuKwUat0s;RTE+rv8a{u3?RVj4WIDZAcj^b;f2HMMJ7(Jy!g$bgf*X
-z1ABgub}iNEYce%~yEsv8Nu`m6ijR?06du3>5dL=_>GsRH6<oM&vAg?!Sf%@B_gSSo
-z<vYm>WVyZm$LtRr(|r$j+W#i7?uemZatB;^yS$@`{?6i#Ci*3J7JawNJBvHg=<lrV
-zNTXkJXLWSD{I}H~D5Sr0a7Q8ik~;@Xx4-EB;@}sdbl=T=Lh0X*@&b+j&du+!_Aevv
-zuRq3pock{-f8#iz{7tyOasKk!@;<`-as4+!ALc(o_{)?0U&H(T2=2GWzav=0`+r98
-zuSWSk(*3scH_{&dKSTPjP3V1?`}y%VOc}{Pg1MJ1RTPkr?|fk19;*m&aMEOVpZ*7^
-CCoI+g
-
-literal 0
-HcmV?d00001
-
 diff --git a/pom.xml b/pom.xml
-index 06908518656f6c32b9a1105e1684bf9102550d1b..58849306f83a13a26e4ab3e98f09bf8ffa4a3ef6 100644
+index 06908518656f6c32b9a1105e1684bf9102550d1b..0a3c319fef62ddc7a97a982c552a8712b68da397 100644
 --- a/pom.xml
 +++ b/pom.xml
 @@ -48,22 +48,35 @@
@@ -193,7 +45,7 @@ index 06908518656f6c32b9a1105e1684bf9102550d1b..58849306f83a13a26e4ab3e98f09bf8f
          <dependency>
              <groupId>log4j</groupId>
              <artifactId>log4j</artifactId>
-@@ -104,20 +117,34 @@
+@@ -104,20 +117,29 @@
              <version>1.9</version>
          </dependency>
          <dependency>
@@ -213,11 +65,6 @@ index 06908518656f6c32b9a1105e1684bf9102550d1b..58849306f83a13a26e4ab3e98f09bf8f
 -            </exclusions>
 +            <artifactId>hadoop-client</artifactId>
 +            <version>2.6.0</version>
-+        </dependency>
-+        <dependency>
-+            <groupId>com.twitter</groupId>
-+            <artifactId>parquet-tools</artifactId>
-+            <version>1.6.0</version>
          </dependency>
          <dependency>
 -            <groupId>org.apache.thrift</groupId>
@@ -238,7 +85,7 @@ index 06908518656f6c32b9a1105e1684bf9102550d1b..58849306f83a13a26e4ab3e98f09bf8f
          </dependency>
          <dependency>
              <groupId>com.twitter</groupId>
-@@ -127,17 +154,12 @@
+@@ -127,17 +149,12 @@
          <dependency>
              <groupId>com.twitter.common.zookeeper</groupId>
              <artifactId>lock</artifactId>
@@ -258,7 +105,7 @@ index 06908518656f6c32b9a1105e1684bf9102550d1b..58849306f83a13a26e4ab3e98f09bf8f
          </dependency>
          <dependency>
              <groupId>junit</groupId>
-@@ -170,7 +192,17 @@
+@@ -170,7 +187,17 @@
          <dependency>
              <groupId>com.timgroup</groupId>
              <artifactId>java-statsd-client</artifactId>
@@ -277,7 +124,7 @@ index 06908518656f6c32b9a1105e1684bf9102550d1b..58849306f83a13a26e4ab3e98f09bf8f
          </dependency>
      </dependencies>
  
-@@ -240,7 +272,30 @@
+@@ -240,7 +267,30 @@
                      </execution>
                  </executions>
              </plugin>
@@ -308,7 +155,7 @@ index 06908518656f6c32b9a1105e1684bf9102550d1b..58849306f83a13a26e4ab3e98f09bf8f
                  <groupId>org.apache.maven.plugins</groupId>
                  <artifactId>maven-assembly-plugin</artifactId>
                  <executions>
-@@ -257,7 +312,7 @@
+@@ -257,7 +307,7 @@
                          </configuration>
                      </execution>
                  </executions>
@@ -493,7 +340,7 @@ index b1ad32099df47c85ba058c6395d75149fbdfc532..03f730f696577f3853b3f4696cd10fe1
 +kafka.ssl.truststore.location=
 +kafka.ssl.truststore.password=
 +kafka.ssl.truststore.type=
-+kafka.ssl.truststore.identification.algorithm=
++kafka.ssl.endpoint.identification.algorithm=
 diff --git a/src/main/config/secor.prod.backup.properties b/src/main/config/secor.prod.backup.properties
 index 35f57f0e8031241bfd215df2b2006dc1215faef9..7141cdf4595f7cf4d3a7a46445f29c5ab3a2f74b 100644
 --- a/src/main/config/secor.prod.backup.properties
@@ -536,7 +383,7 @@ index 14e36e66714fad6a38757919d3076ff05547fb9b..5999cb830429b155373b2b6164f113f0
  secor.local.path=/mnt/secor_data/message_logs/partition
  
 diff --git a/src/main/config/secor.prod.properties b/src/main/config/secor.prod.properties
-index 0801a5c99185a97a605dd220a046b9d44c126505..ef8750234504e60df8e29a88b687d81e4f6038b1 100644
+index 0801a5c99185a97a605dd220a046b9d44c126505..c1a8042f2b4e9774026bd028911f35efcc84d53b 100644
 --- a/src/main/config/secor.prod.properties
 +++ b/src/main/config/secor.prod.properties
 @@ -19,15 +19,34 @@ include=secor.common.properties
@@ -579,7 +426,7 @@ index 0801a5c99185a97a605dd220a046b9d44c126505..ef8750234504e60df8e29a88b687d81e
  
  ################
  # END MUST SET #
-@@ -37,5 +56,23 @@ zookeeper.quorum=
+@@ -37,5 +56,24 @@ zookeeper.quorum=
  # 200MB
  secor.max.file.size.bytes=200000000
  # 1 hour
@@ -604,6 +451,8 @@ index 0801a5c99185a97a605dd220a046b9d44c126505..ef8750234504e60df8e29a88b687d81e
 +kafka.ssl.truststore.password=changeit
 +kafka.ssl.truststore.type=JKS
 +kafka.ssl.endpoint.identification.algorithm=HTTPS
++kafka.sasl.mechanism=PLAIN
+\ No newline at end of file
 diff --git a/src/main/java/com/pinterest/secor/common/FileRegistry.java b/src/main/java/com/pinterest/secor/common/FileRegistry.java
 index ac0c054762a4b6577edc78e1d8d8eb50232e6821..e292b1464ef57eb83315c90c3bca18737fa8b24a 100644
 --- a/src/main/java/com/pinterest/secor/common/FileRegistry.java
@@ -1086,7 +935,7 @@ index cc2adebbbe3cb4f67d1928808fe636124b1a5497..00000000000000000000000000000000
 -    }
 -}
 diff --git a/src/main/java/com/pinterest/secor/common/SecorConfig.java b/src/main/java/com/pinterest/secor/common/SecorConfig.java
-index 2cb7c3b9de489332b6fc493f86c5007abd060b8c..ec54576cf3186a63fd0136aa539bc72d53b81412 100644
+index 2cb7c3b9de489332b6fc493f86c5007abd060b8c..77ca61f406b018bc226e450c3301693bf6207ed0 100644
 --- a/src/main/java/com/pinterest/secor/common/SecorConfig.java
 +++ b/src/main/java/com/pinterest/secor/common/SecorConfig.java
 @@ -16,12 +16,18 @@
@@ -1123,7 +972,7 @@ index 2cb7c3b9de489332b6fc493f86c5007abd060b8c..ec54576cf3186a63fd0136aa539bc72d
          @Override
          protected SecorConfig initialValue() {
              // Load the default configuration file first
-@@ -67,14 +75,74 @@ public class SecorConfig {
+@@ -67,14 +75,79 @@ public class SecorConfig {
          mProperties = properties;
      }
  
@@ -1179,6 +1028,11 @@ index 2cb7c3b9de489332b6fc493f86c5007abd060b8c..ec54576cf3186a63fd0136aa539bc72d
 +    public String getKafkaEnabledProtocols() {
 +        return getString("kafka.ssl.enabled.protocols");
 +    }
++
++
++    private String getKafkaSASLMechanism() {
++        return getString("kafka.sasl.mechanism");
++    }
 +    
 +    public String getKafkaSSLLocation() {
 +        return getString("kafka.ssl.truststore.location");
@@ -1199,7 +1053,7 @@ index 2cb7c3b9de489332b6fc493f86c5007abd060b8c..ec54576cf3186a63fd0136aa539bc72d
      public String getKafkaZookeeperPath() {
          return getString("kafka.zookeeper.path");
      }
-@@ -135,6 +203,22 @@ public class SecorConfig {
+@@ -135,6 +208,22 @@ public class SecorConfig {
          return getInt("secor.messages.per.second");
      }
  
@@ -1222,7 +1076,7 @@ index 2cb7c3b9de489332b6fc493f86c5007abd060b8c..ec54576cf3186a63fd0136aa539bc72d
      public String getS3Bucket() {
          return getString("secor.s3.bucket");
      }
-@@ -155,12 +239,17 @@ public class SecorConfig {
+@@ -155,12 +244,17 @@ public class SecorConfig {
          return getString("secor.kafka.group");
      }
  
@@ -1244,7 +1098,7 @@ index 2cb7c3b9de489332b6fc493f86c5007abd060b8c..ec54576cf3186a63fd0136aa539bc72d
      }
  
      public String getMessageParserClass() {
-@@ -179,6 +268,10 @@ public class SecorConfig {
+@@ -179,6 +273,10 @@ public class SecorConfig {
          return getInt("ostrich.port");
      }
  
@@ -1255,7 +1109,7 @@ index 2cb7c3b9de489332b6fc493f86c5007abd060b8c..ec54576cf3186a63fd0136aa539bc72d
      public String getAwsAccessKey() {
          return getString("aws.access.key");
      }
-@@ -186,7 +279,47 @@ public class SecorConfig {
+@@ -186,7 +284,47 @@ public class SecorConfig {
      public String getAwsSecretKey() {
          return getString("aws.secret.key");
      }
@@ -1303,7 +1157,7 @@ index 2cb7c3b9de489332b6fc493f86c5007abd060b8c..ec54576cf3186a63fd0136aa539bc72d
      public String getQuboleApiToken() {
          return getString("qubole.api.token");
      }
-@@ -207,6 +340,10 @@ public class SecorConfig {
+@@ -207,6 +345,10 @@ public class SecorConfig {
          return getString("message.timestamp.name");
      }
  
@@ -1314,7 +1168,7 @@ index 2cb7c3b9de489332b6fc493f86c5007abd060b8c..ec54576cf3186a63fd0136aa539bc72d
      public String getMessageTimestampInputPattern() {
          return getString("message.timestamp.input.pattern");
      }
-@@ -231,6 +368,14 @@ public class SecorConfig {
+@@ -231,6 +373,14 @@ public class SecorConfig {
      	return getString("secor.kafka.perf_topic_prefix");
      }
  
@@ -1329,7 +1183,7 @@ index 2cb7c3b9de489332b6fc493f86c5007abd060b8c..ec54576cf3186a63fd0136aa539bc72d
      private void checkProperty(String name) {
          if (!mProperties.containsKey(name)) {
              throw new RuntimeException("Failed to find required configuration option '" +
-@@ -238,6 +383,72 @@ public class SecorConfig {
+@@ -238,6 +388,73 @@ public class SecorConfig {
          }
      }
  
@@ -1388,6 +1242,7 @@ index 2cb7c3b9de489332b6fc493f86c5007abd060b8c..ec54576cf3186a63fd0136aa539bc72d
 +        
 +        if (getKafkaSecurityProtocol() != null && !getKafkaSecurityProtocol().isEmpty()) {
 +            props.put("security.protocol", getKafkaSecurityProtocol());
++            props.put("sasl.mechanism", getKafkaSASLMechanism());
 +            props.put("ssl.protocol", getKafkaSSLProtocol());
 +            props.put("ssl.enabled.protocols", getKafkaEnabledProtocols());
 +            props.put("ssl.truststore.location", getKafkaSSLLocation());
@@ -2810,21 +2665,27 @@ index 12ccc22ff7152a58cbfa51684485da8919122b32..4bfa4383aa52fba72bccbed8c67973dc
          return message;
 diff --git a/src/main/java/com/pinterest/secor/supervisor/Supervisor.java b/src/main/java/com/pinterest/secor/supervisor/Supervisor.java
 new file mode 100644
-index 0000000000000000000000000000000000000000..ab2e62bb8e1e075b2f189266263e02694f25ec6c
+index 0000000000000000000000000000000000000000..a4a3ed4fcbfc1c2c2ef62cf975d6b1c7e4168260
 --- /dev/null
 +++ b/src/main/java/com/pinterest/secor/supervisor/Supervisor.java
-@@ -0,0 +1,47 @@
+@@ -0,0 +1,55 @@
 +package com.pinterest.secor.supervisor;
 +
 +import com.pinterest.secor.common.SecorConfig;
++import com.pinterest.secor.common.SecorReports;
 +import com.pinterest.secor.consumer.Consumer;
++import org.apache.kafka.common.TopicPartition;
++import org.slf4j.Logger;
++import org.slf4j.LoggerFactory;
 +
 +import java.util.List;
 +
 +/**
 + * Created by guy on 8/22/16.
 + */
-+public class Supervisor extends Thread{
++public class Supervisor extends Thread {
++    private static final Logger LOG = LoggerFactory.getLogger(Supervisor.class);
++
 +    private SecorConfig mConfig;
 +    private List<Consumer> consumers;
 +    private int hangsTimeout;
@@ -2847,12 +2708,14 @@ index 0000000000000000000000000000000000000000..ab2e62bb8e1e075b2f189266263e0269
 +                Thread.sleep(hangsTimeout);
 +                for (int idx=0 ; idx< consumers.size(); idx++) {
 +                    Consumer consumer = consumers.get(idx);
-+                    if (consumersReportTime[idx] == consumer.getmReport().getTimestamp()) {
-+                        if (consumer.getmReport().isHangs()) {
++                    SecorReports report = consumer.getmReport();
++                    if (consumersReportTime[idx] == report.getTimestamp()) {
++                        if (report.isHangs()) {
++                            LOG.error("hangs status - " + report.getStatus());
 +                            throw new Exception("consumer " + consumer.getId() + " hangs");
 +                        }
 +                    } else {
-+                        consumersReportTime[idx] = consumer.getmReport().getTimestamp();
++                        consumersReportTime[idx] = report.getTimestamp();
 +                    }
 +                }
 +            }
