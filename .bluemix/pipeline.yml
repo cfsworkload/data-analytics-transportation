@@ -27,19 +27,18 @@ stages:
       application: ${CF_APP}
     properties:
     - name: mapquestKey
-      value: ''
+      value: 'aa'
       type: text
     script: "#!/bin/bash\ncf create-service cloudantNoSQLDB Shared DAT-cloudant\n\
-      export mapquestKey=aa
+      #export mapquestKey=aa
+      sed -i \"s/PUT_KEY_HERE/${mapquestKey}/g\" ${WORKSPACE}/public/freeboard/index2.html\n\
+      sed -i \"s/PUT_KEY_HERE/${mapquestKey}/g\" ${WORKSPACE}/public/freeboard/js/openMap.js\n\
       cf create-service spark ibm.SparkService.PayGoPersonal DAT-spark\n\
       cf create-service Object-Storage Free DAT-objectstorage \n\
       cf create-service messagehub standard \"Message Hub-e2\"\ncf push \"${CF_APP}\"\
       \ --no-start\ncf bind-service \"${CF_APP}\" DAT-cloudant\ncf bind-service \"\
       ${CF_APP}\" DAT-spark\ncf bind-service \"${CF_APP}\" DAT-objectstorage\ncf bind-service \"${CF_APP}\" \"Message Hub-e2\"\ncf start\
       \ \"${CF_APP}\""
-    COMMAND: "
-      sed -i \"s/PUT_KEY_HERE/${mapquestKey}/g\" ${WORKSPACE}/public/freeboard/index2.html\n\
-      sed -i \"s/PUT_KEY_HERE/${mapquestKey}/g\" ${WORKSPACE}/public/freeboard/js/openMap.js\n"
 - name: Container Build
   inputs:
   - type: git
