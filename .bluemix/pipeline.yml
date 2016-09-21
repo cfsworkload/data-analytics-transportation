@@ -77,7 +77,6 @@ stages:
       export msghubPassword=${output:1:${#output}-3}
       output=`cf env ${CF_APP} | grep -w user -m 1 |  awk '{print $2}'`
       export msghubUser=${output:1:${#output}-2}
-      #output=
       export mapquestKey="aa"
   - name: Container Build
     type: builder
@@ -94,8 +93,8 @@ stages:
       \ >> ${WORKSPACE}/secor/DataServices/SECOR_INSTALL_DIR/secor.common.properties\n
       \ echo \"KafkaClient { \n     com.ibm.messagehub.login.MessageHubLoginModule required \n     serviceName=\"kafka\"\n     username=\"${msghubUser}\"\n     password=\"${msghubPassword}\";\n };\"\
       \ > ${WORKSPACE}/secor/DataServices/SECOR_INSTALL_DIR/jaas.conf\n\
-      \ sed -i "s/PUT_KEY_HERE/${mapquestKey}/g" ${WORKSPACE}/public/freeboard/index2.html\n\
-      \ sed -i "s/PUT_KEY_HERE/${mapquestKey}/g" ${WORKSPACE}/public/freeboard/js/openMap.js\n\
+      \ sed -i \"s/PUT_KEY_HERE/${mapquestKey}/g\" ${WORKSPACE}/public/freeboard/index2.html\n\
+      \ sed -i \"s/PUT_KEY_HERE/${mapquestKey}/g\" ${WORKSPACE}/public/freeboard/js/openMap.js\n\
       \ echo \"swift.username=${username}\"\
       \ >> ${WORKSPACE}/secor/DataServices/SECOR_INSTALL_DIR/secor.common.properties\necho \"swift.password=${password}\"\
       \ >> ${WORKSPACE}/secor/DataServices/SECOR_INSTALL_DIR/secor.common.properties\n\necho \"\
