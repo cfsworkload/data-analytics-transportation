@@ -7,7 +7,7 @@
         description : "Some sort of description <strong>openMap with Markers</strong>",
 
         external_scripts: [
-            "js/leaflet.js", "js/Leaflet.MakiMarkers.js", "https://www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=99qPhavuqAsqaIpAH2uKEDsJGdQsikwf"
+            "js/leaflet.js", "js/Leaflet.MakiMarkers.js", "https://www.mapquestapi.com/sdk/leaflet/v2.s/mq-map.js?key=PUT_KEY_HERE"
         ],
  
         fill_size   : true,
