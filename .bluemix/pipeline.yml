@@ -25,12 +25,8 @@ stages:
       organization: ${CF_ORGANIZATION}
       space: ${CF_SPACE}
       application: ${CF_APP}
-    properties:
-    - name: mapquestKey
-      value: 'aa'
-      type: text
     script: "#!/bin/bash\ncf create-service cloudantNoSQLDB Shared DAT-cloudant\n\
-      #export mapquestKey=aa
+      mapquestKey=aa\n\
       sed -i \"s/PUT_KEY_HERE/${mapquestKey}/g\" ${WORKSPACE}/public/freeboard/index2.html\n\
       sed -i \"s/PUT_KEY_HERE/${mapquestKey}/g\" ${WORKSPACE}/public/freeboard/js/openMap.js\n\
       cf create-service spark ibm.SparkService.PayGoPersonal DAT-spark\n\
