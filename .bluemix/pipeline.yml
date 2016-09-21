@@ -25,13 +25,21 @@ stages:
       organization: ${CF_ORGANIZATION}
       space: ${CF_SPACE}
       application: ${CF_APP}
+    properties:
+    - name: mapquestKey
+      value: ''
+      type: text
     script: "#!/bin/bash\ncf create-service cloudantNoSQLDB Shared DAT-cloudant\n\
+      export mapquestKey=aa
       cf create-service spark ibm.SparkService.PayGoPersonal DAT-spark\n\
       cf create-service Object-Storage Free DAT-objectstorage \n\
       cf create-service messagehub standard \"Message Hub-e2\"\ncf push \"${CF_APP}\"\
       \ --no-start\ncf bind-service \"${CF_APP}\" DAT-cloudant\ncf bind-service \"\
       ${CF_APP}\" DAT-spark\ncf bind-service \"${CF_APP}\" DAT-objectstorage\ncf bind-service \"${CF_APP}\" \"Message Hub-e2\"\ncf start\
       \ \"${CF_APP}\""
+    COMMAND: "
+      sed -i \"s/PUT_KEY_HERE/${mapquestKey}/g\" ${WORKSPACE}/public/freeboard/index2.html\n\
+      sed -i \"s/PUT_KEY_HERE/${mapquestKey}/g\" ${WORKSPACE}/public/freeboard/js/openMap.js\n"
 - name: Container Build
   inputs:
   - type: git
@@ -54,11 +62,8 @@ stages:
   - name: password
     value: ''
     type: text
-  - name: mapquestKey
-    value: ''
-    type: text
   jobs:
-  - name: Get object storage credentials
+  - name: Get object storage & message hub credentials
     type: deployer
     target:
       url: ${CF_TARGET_URL}
@@ -77,7 +82,6 @@ stages:
       export msghubPassword=${output:1:${#output}-3}
       output=`cf env ${CF_APP} | grep -w user -m 1 |  awk '{print $2}'`
       export msghubUser=${output:1:${#output}-2}
-      export mapquestKey=aa
   - name: Container Build
     type: builder
     extension_id: ibm.devops.services.pipeline.container.builder
@@ -93,8 +97,6 @@ stages:
       \ >> ${WORKSPACE}/secor/DataServices/SECOR_INSTALL_DIR/secor.common.properties\n
       \ echo \"KafkaClient { \n     com.ibm.messagehub.login.MessageHubLoginModule required \n     serviceName=\"kafka\"\n     username=\"${msghubUser}\"\n     password=\"${msghubPassword}\";\n };\"\
       \ > ${WORKSPACE}/secor/DataServices/SECOR_INSTALL_DIR/jaas.conf\n\
-      \ sed -i \"s/PUT_KEY_HERE/${mapquestKey}/g\" ${WORKSPACE}/public/freeboard/index2.html\n\
-      \ sed -i \"s/PUT_KEY_HERE/${mapquestKey}/g\" ${WORKSPACE}/public/freeboard/js/openMap.js\n\
       \ echo \"swift.username=${username}\"\
       \ >> ${WORKSPACE}/secor/DataServices/SECOR_INSTALL_DIR/secor.common.properties\necho \"swift.password=${password}\"\
       \ >> ${WORKSPACE}/secor/DataServices/SECOR_INSTALL_DIR/secor.common.properties\n\necho \"\
