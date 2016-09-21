@@ -77,7 +77,7 @@ stages:
       export msghubPassword=${output:1:${#output}-3}
       output=`cf env ${CF_APP} | grep -w user -m 1 |  awk '{print $2}'`
       export msghubUser=${output:1:${#output}-2}
-      export mapquestKey="aa"
+      export mapquestKey=aa
   - name: Container Build
     type: builder
     extension_id: ibm.devops.services.pipeline.container.builder
