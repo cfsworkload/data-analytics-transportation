@@ -66,6 +66,12 @@ After the pipeline has been configured, you can monitor the deployment by follow
 2. Go to **MY PROJECTS**.
 3. Select **BUILD & DEPLOY**.
 4. You can monitor the stages by selecting **View logs and history**.
+5. After configuring an access key (see note below), press **Run Stage** for **Cloud Foundry Deploy** to continue deployment.
+
+**NOTE:** The deployment would stop and wait for an access key to the map service. After aquiring an access key:
+
+stage **Cloud Foundry Deploy** -> **Stage Configuration** -> **Configure Stage** -> **Environment Properties** tab -> insert your mapquest access key.
+To register to mapquest map services: https://developer.mapquest.com/plan_purchase/steps/business_edition/business_edition_free/register
 
 ## Set up Object Storage
 
