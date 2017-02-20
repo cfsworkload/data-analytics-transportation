@@ -1,6 +1,6 @@
 {
     "name"         : "node-red-bluemix",
-    "version"      : "0.x",
+    "version"      : "0.10.0",
     "dependencies": {
         "when": "~3.x",
         "mongodb": "~1.4.x",
@@ -16,12 +16,13 @@
         "node-red-contrib-ibmpush":"0.x",
         "node-red-contrib-bluemix-hdfs":"0.x",
         "node-red-nodes-cf-sqldb-dashdb":"0.x",
+        "kafka-node":"*",
         "dateformat":"*",
         "node-red-contrib-freeboard":"*",
         "node-red-contrib-splitter":"*",
         "ping":"*"
     },
     "engines": {
-        "node": "x"
+        "node": "0.12.7"
     }
 }
