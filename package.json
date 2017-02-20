@@ -22,6 +22,6 @@
         "ping":"*"
     },
     "engines": {
-        "node": "0.x"
+        "node": "x"
     }
 }
