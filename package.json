@@ -1,6 +1,6 @@
 {
     "name"         : "node-red-bluemix",
-    "version"      : "0.4.20",
+    "version"      : "0.x",
     "dependencies": {
         "when": "~3.x",
         "mongodb": "~1.4.x",
@@ -19,7 +19,6 @@
         "dateformat":"*",
         "node-red-contrib-freeboard":"*",
         "node-red-contrib-splitter":"*",
-        "kafka-node":"*",
         "ping":"*"
     },
     "engines": {
