@@ -17,6 +17,7 @@
         "node-red-contrib-bluemix-hdfs":"0.x",
         "node-red-nodes-cf-sqldb-dashdb":"0.x",
         "kafka-node":"*",
+        "node-rdkafka":"0.x",
         "dateformat":"*",
         "node-red-contrib-freeboard":"*",
         "node-red-contrib-splitter":"*",
