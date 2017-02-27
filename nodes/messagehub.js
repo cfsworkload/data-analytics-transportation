@@ -7,25 +7,40 @@ module.exports = function(RED) {
    */
   function MessageHubProducer(config) {
     RED.nodes.createNode(this, config);
-
     var node = this;
-    var Kafka = require('node-rdkafka');
+	   
+	if (process.env.VCAP_SERVICES) {
+    // Running in Bluemix
+    var Kafka = require('node-rdkafka-prebuilt');
+    console.log("Running in Bluemix mode.");
 
-    //var apikey = config.apikey;
-	var apikey = 'cUPJxFvxGe6ff4GpSG4TgKCn8WIWAGkZAV7SwuacfZqOwXZD';
+    var services = JSON.parse(process.env.VCAP_SERVICES);
+    for (var key in services) {
+        if (key.lastIndexOf('messagehub', 0) === 0) {
+            messageHubService = services[key][0];
+            opts.brokers = messageHubService.credentials.kafka_brokers_sasl;
+            opts.username = messageHubService.credentials.user;
+            opts.password = messageHubService.credentials.password;
+        }
+    }
+	opts.calocation = '/etc/ssl/certs';
+    //var Kafka = require('node-rdkafka');
+
+    var apikey = config.apikey;
     var kafka_rest_url = config.kafkaresturl;
-	var user = apikey.substring(0,16);
-	var pass = apikey.substring(16);
+	
+	var driver_options = {
+        //'debug': 'all',
+        'metadata.broker.list': opts.brokers,
+        'security.protocol': 'sasl_ssl',
+        'ssl.ca.location': opts.calocation,
+        'sasl.mechanisms': 'PLAIN',
+        'sasl.username': opts.username,
+        'sasl.password': opts.password,
+		'client.id': 'kafka-producer'
+    };
 
-	var producer = new Kafka.Producer({
-		'client.id': 'producer',
-  		'metadata.broker.list': 'kafka01-prod01.messagehub.services.us-south.bluemix.net:9093,kafka02-prod01.messagehub.services.us-south.bluemix.net:9093,kafka03-prod01.messagehub.services.us-south.bluemix.net:9093,kafka04-prod01.messagehub.services.us-south.bluemix.net:9093,kafka05-prod01.messagehub.services.us-south.bluemix.net:9093',
-		'security.protocol': 'sasl_ssl',
-		'sasl.mechanisms': 'PLAIN',
-		'ssl.ca.location': '/etc/ssl/certs',
-		'sasl.username': user,
-		'sasl.password': pass
-	});
+	var producer = new Kafka.Producer(driver_options);
 	  
 	var topic = config.topic;
 	node.log("producer trying to connect.. ");
@@ -58,6 +73,7 @@ module.exports = function(RED) {
 	});
 	  
 	producer.connect();
+	 } else { node.error("cant find vcap");}
   }
   
   RED.nodes.registerType("messagehub out", MessageHubProducer);
@@ -70,21 +86,39 @@ module.exports = function(RED) {
     RED.nodes.createNode(this,config);
 
     var node = this;
-    var Kafka = require('node-rdkafka');
+	  
+	// Running in Bluemix
+    var Kafka = require('node-rdkafka-prebuilt');
+    console.log("Running in Bluemix mode.");
+
+    var services = JSON.parse(process.env.VCAP_SERVICES);
+    for (var key in services) {
+        if (key.lastIndexOf('messagehub', 0) === 0) {
+            messageHubService = services[key][0];
+            opts.brokers = messageHubService.credentials.kafka_brokers_sasl;
+            opts.username = messageHubService.credentials.user;
+            opts.password = messageHubService.credentials.password;
+        }
+    }
+	opts.calocation = '/etc/ssl/certs';
+	  
+	  
+	var driver_options = {
+        //'debug': 'all',
+        'metadata.broker.list': opts.brokers,
+        'security.protocol': 'sasl_ssl',
+        'ssl.ca.location': opts.calocation,
+        'sasl.mechanisms': 'PLAIN',
+        'sasl.username': opts.username,
+        'sasl.password': opts.password,
+		'client.id': 'kafka-consumer',
+		'group.id': 'kafka-consumer-group'
+    };
+	  
     var apikey = config.apikey;
     var kafka_rest_url = config.kafkaresturl;
     
-	var consumer  = new Kafka.KafkaConsumer({
-		'client.id': 'consumer',
-  		'group.id': 'consumer',
-		'metadata.broker.list': kafka_rest_url,
-		'security.protocol': 'sasl_ssl',
-		'sasl.mechanisms': 'PLAIN',
-		//'ssl.cipher.suites': 'TLSv1.2',
-		'ssl.ca.location': '/etc/ssl/certs',
-		'sasl.username': 'cUPJxFvxGe6ff4Gp',
-		'sasl.password': 'SG4TgKCn8WIWAGkZAV7SwuacfZqOwXZD'
-	},{}); 
+	var consumer  = new Kafka.KafkaConsumer(driver_options); 
 	  
     var topic = config.topic;
     var stream = consumer.getReadStream(topic);
