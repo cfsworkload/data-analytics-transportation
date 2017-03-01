@@ -12,12 +12,12 @@
         icon: "kafka.png",
         align: "right",
         label: function() {
-            return this.name||"messagehub out";
+            return this.name||"messagehub out 2";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="messagehub out">
+<script type="text/x-red" data-template-name="messagehub out 2">
     <div class="form-row">
         <label for="node-input-apikey"><i class="icon-tag"></i>API Key</label>
         <input type="text" id="node-input-apikey" placeholder="API Key">
@@ -34,7 +34,7 @@
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="messagehub out">
+<script type="text/x-red" data-help-name="messagehub out 2">
     <p>A simple Message Hub producer node.</p>
     <p><b>API Key</b> <i>The API Key provided by the Message Hub Service</i>. The service will not be automatically created, you need to go to Bluemix and activate the Message Hub Service in the Catalog section.</p>
     <p><b>Kafka REST URL</b> <i>The full URL of the Kafka REST URL provided by the Message Hub Service. Once the service has been provisioned on Bluemix, go to credentials and get your REST API URL.</p>
@@ -58,12 +58,12 @@ Topic = "topic"
         outputs:1,
         icon: "kafka.png",
         label: function() {
-          return this.name||"messagehub in";
+          return this.name||"messagehub in 2";
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="messagehub in">
+<script type="text/x-red" data-template-name="messagehub in 2">
   <div class="form-row">
       <label for="node-input-apikey"><i class="icon-tag"></i>API Key</label>
       <input type="text" id="node-input-apikey" placeholder="API Key">
@@ -80,7 +80,7 @@ Topic = "topic"
   </div>
 </script>
 
-<script type="text/x-red" data-help-name="messagehub in">
+<script type="text/x-red" data-help-name="messagehub in 2">
 <p>A simple Message Hub consumer node.</p>
 <p><b>API Key</b> <i>The API Key provided by the Message Hub Service</i>. The service will not be automatically created, you need to go to Bluemix and activate the Message Hub Service in the Catalog section.</p>
 <p><b>Kafka REST URL</b> <i>The full URL of the Kafka REST URL provided by the Message Hub Service. Once the service has been provisioned on Bluemix, go to credentials and get your REST API URL.</p>
