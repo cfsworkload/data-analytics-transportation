@@ -16,7 +16,7 @@
         "node-red-contrib-ibmpush":"0.x",
         "node-red-contrib-bluemix-hdfs":"0.x",
         "node-red-nodes-cf-sqldb-dashdb":"0.x",
-        "node-rdkafka-prebuilt": "file:./node_modules/node-rdkafka-prebuilt",
+        "node-rdkafka-prebuilt": "file:./prebuilt/node-rdkafka-prebuilt",
         "dateformat":"*",
         "node-red-contrib-freeboard":"*",
         "node-red-contrib-splitter":"*",
