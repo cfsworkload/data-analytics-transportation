@@ -76,7 +76,7 @@ module.exports = function(RED) {
 	 } else { node.error("cant find vcap");}
   }
   
-  RED.nodes.registerType("messagehub out", MessageHubProducer);
+  RED.nodes.registerType("messagehub out 2", MessageHubProducer);
   
 
   /*
@@ -139,5 +139,5 @@ module.exports = function(RED) {
 	});
   }
 
-  RED.nodes.registerType("messagehub in", MessageHubConsumer);
+  RED.nodes.registerType("messagehub in 2", MessageHubConsumer);
 }
