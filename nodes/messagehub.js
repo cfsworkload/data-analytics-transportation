@@ -38,7 +38,7 @@ module.exports = function(RED) {
         'sasl.mechanisms': 'PLAIN',
         'sasl.username': opts.username,
         'sasl.password': opts.password,
-		'client.id': 'kafka-producer'
+	'client.id': 'kafka-producer'
     };
 
 	var producer = new Kafka.Producer(driver_options);
@@ -75,8 +75,8 @@ module.exports = function(RED) {
 	  
 	node.warn("producer trying to connect.. ");
 	node.log("brokers: " + opts.brokers);
-	node.log("username:" + opts.username);
-	node.log("password:" + opts.password);
+	node.log("username: " + opts.username);
+	node.log("password: " + opts.password);
 	producer.connect();
 	 } else { node.error("cant find vcap");}
   }
