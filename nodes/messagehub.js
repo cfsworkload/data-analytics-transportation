@@ -13,7 +13,7 @@ module.exports = function(RED) {
     if (process.env.VCAP_SERVICES) {
     // Running in Bluemix
     var Kafka = require('node-rdkafka-prebuilt');
-    console.log("Running in Bluemix mode.");
+    node.info("Running in Bluemix mode.");
 
     var services = JSON.parse(process.env.VCAP_SERVICES);
     for (var key in services) {
@@ -44,10 +44,10 @@ module.exports = function(RED) {
 	var producer = new Kafka.Producer(driver_options);
 	  
 	var topic = config.topic;
-	node.log("producer trying to connect.. ");
+	
 	
 	producer.on('ready', function() {
-		node.log("producer established connection successfully.. ");
+		node.warn("producer established connection successfully.. ");
 	});
 	
 
@@ -73,6 +73,10 @@ module.exports = function(RED) {
   		node.error(err);
 	});
 	  
+	node.warn("producer trying to connect.. ");
+	node.log("brokers: " + opts.brokers);
+	node.log("username:" + opts.username);
+	node.log("password:" + opts.password);
 	producer.connect();
 	 } else { node.error("cant find vcap");}
   }
