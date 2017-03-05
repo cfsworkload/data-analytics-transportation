@@ -8,8 +8,9 @@ module.exports = function(RED) {
   function MessageHubProducer(config) {
     RED.nodes.createNode(this, config);
     var node = this;
+    var opts = {};
 	   
-	if (process.env.VCAP_SERVICES) {
+    if (process.env.VCAP_SERVICES) {
     // Running in Bluemix
     var Kafka = require('node-rdkafka-prebuilt');
     console.log("Running in Bluemix mode.");
@@ -84,9 +85,8 @@ module.exports = function(RED) {
    */
   function MessageHubConsumer(config) {
     RED.nodes.createNode(this,config);
-
     var node = this;
-	  
+    var opts = {};
 	// Running in Bluemix
     var Kafka = require('node-rdkafka-prebuilt');
     console.log("Running in Bluemix mode.");
