@@ -13,7 +13,7 @@ module.exports = function(RED) {
     if (process.env.VCAP_SERVICES) {
     // Running in Bluemix
     var Kafka = require('node-rdkafka-prebuilt');
-    node.info("Running in Bluemix mode.");
+    node.log("Running in Bluemix mode.");
 
     var services = JSON.parse(process.env.VCAP_SERVICES);
     for (var key in services) {
