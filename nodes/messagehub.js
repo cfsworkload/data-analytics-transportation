@@ -74,9 +74,9 @@ module.exports = function(RED) {
 	});
 	  
 	node.warn("producer trying to connect.. ");
-	node.log("brokers: " + opts.brokers);
 	node.log("username: " + opts.username);
 	node.log("password: " + opts.password);
+	 node.log("brokers: " + opts.brokers);
 	producer.connect();
 	 } else { node.error("cant find vcap");}
   }
