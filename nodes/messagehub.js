@@ -145,7 +145,6 @@ module.exports = function(RED) {
     	consumer.on('data', function(m) {
 		node.log(JSON.stringify(m));
 		node.send({payload: m});
-		node.log(JSON.stringify(m));
 	});
 	  
 	node.warn("consumer trying to connect.. "); 
