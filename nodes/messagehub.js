@@ -20,8 +20,8 @@ module.exports = function(RED) {
         if (key.lastIndexOf('messagehub', 0) === 0) {
             messageHubService = services[key][0];
             opts.brokers = messageHubService.credentials.kafka_brokers_sasl;
-            //opts.username = messageHubService.credentials.user;
-            //opts.password = messageHubService.credentials.password;
+            opts.username = messageHubService.credentials.user;
+            opts.password = messageHubService.credentials.password;
         }
     }
 	opts.calocation = '/etc/ssl/certs';
@@ -29,8 +29,8 @@ module.exports = function(RED) {
 
     var apikey = config.apikey;
     var kafka_rest_url = config.kafkaresturl;
-    opts.username = apikey.substring(0,16);
-    opts.password = apikey.substring(16);
+    //opts.username = apikey.substring(0,16);
+    //opts.password = apikey.substring(16);
 	    
     var driver_options = {
         //'debug': 'all',
@@ -60,9 +60,10 @@ module.exports = function(RED) {
         payloads.push(msg.payload);
 		payloads.forEach(function (msg) { 
 			try {
-				producer.produce(topic, null, "apple"); 
-				node.log("message sent");
-         		node.log(msg);
+				var message = new Buffer(JSON.stringify(msg));
+				producer.produce(topic, null, message); 
+				node.log("message sent:");
+         			node.log(message);
 			} catch(e) {
 				node.log('A problem occurred when sending our message');
     			node.error(e);
@@ -132,8 +133,8 @@ module.exports = function(RED) {
 	this.log("Consumer created...");
 	try { 
     	stream.on('data', function(data) {
-  		console.log('Got message');
-  		console.log(data.message.toString());
+  		node.log('Got message');
+  		node.log(data.message.toString());
 		node.send({payload: data});	
 		});
 	} catch(e) {
@@ -141,8 +142,8 @@ module.exports = function(RED) {
       return;
     }
 	stream.on('error', function (err) {
-    	console.error('Error in our kafka stream');
-  		console.error(err);
+    	node.error('Error in our kafka stream');
+  		node.error(err);
 	});
   }
 
