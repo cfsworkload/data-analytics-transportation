@@ -62,10 +62,9 @@ module.exports = function(RED) {
 			try {
 				var message = new Buffer(JSON.stringify(msg));
 				producer.produce(topic, null, message); 
-				node.log("message sent:");
          			node.log(message);
 			} catch(e) {
-				node.log('A problem occurred when sending our message');
+			node.log('A problem occurred when sending our message');
     			node.error(e);
     		}
 		}); 
@@ -119,32 +118,38 @@ module.exports = function(RED) {
         'sasl.mechanisms': 'PLAIN',
         'sasl.username': opts.username,
         'sasl.password': opts.password,
-		'client.id': 'kafka-consumer',
-		'group.id': 'kafka-consumer-group'
+	'client.id': 'kafka-consumer',
+	'group.id': 'kafka-consumer-group'
     };
 	  
     var apikey = config.apikey;
     var kafka_rest_url = config.kafkaresturl;
     
-	var consumer  = new Kafka.KafkaConsumer(driver_options); 
-	  
+    var consumer  = new Kafka.KafkaConsumer(driver_options); 
+    var consumedMessages = []   
     var topic = config.topic;
-    var stream = consumer.getReadStream(topic);
-	this.log("Consumer created...");
-	try { 
-    	stream.on('data', function(data) {
-  		node.log('Got message');
-  		node.log(data.message.toString());
-		node.send({payload: data});	
-		});
-	} catch(e) {
-      node.error(e);
-      return;
-    }
-	stream.on('error', function (err) {
-    	node.error('Error in our kafka stream');
+	
+	  consumer.on('ready', function() {
+		node.warn("consumer established connection successfully.. ");
+		node.warn("consumer subscribed to topic:" + topic);
+		consumer.consume([topic]);
+	});
+	  
+    consumer.on('error', function(err) {
+  		node.error('Error from consumer - possible connection failure');
   		node.error(err);
 	});
+	  
+	
+	  
+    	consumer.on('data', function(m) {
+		node.log(JSON.stringify(m));
+		node.send({payload: m});
+		node.log(JSON.stringify(m));
+	});
+	  
+	node.warn("consumer trying to connect.. "); 
+	consumer.connect();  
   }
 
   RED.nodes.registerType("messagehub in 2", MessageHubConsumer);
