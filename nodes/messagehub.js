@@ -20,8 +20,8 @@ module.exports = function(RED) {
         if (key.lastIndexOf('messagehub', 0) === 0) {
             messageHubService = services[key][0];
             opts.brokers = messageHubService.credentials.kafka_brokers_sasl;
-            opts.username = messageHubService.credentials.user;
-            opts.password = messageHubService.credentials.password;
+            //opts.username = messageHubService.credentials.user;
+            //opts.password = messageHubService.credentials.password;
         }
     }
 	opts.calocation = '/etc/ssl/certs';
@@ -29,8 +29,10 @@ module.exports = function(RED) {
 
     var apikey = config.apikey;
     var kafka_rest_url = config.kafkaresturl;
-	
-	var driver_options = {
+    opts.username = apikey.substring(0,16);
+    opts.password = apikey.substring(16);
+	    
+    var driver_options = {
         //'debug': 'all',
         'metadata.broker.list': opts.brokers,
         'security.protocol': 'sasl_ssl',
@@ -44,6 +46,7 @@ module.exports = function(RED) {
 	var producer = new Kafka.Producer(driver_options);
 	  
 	var topic = config.topic;
+	    
 	
 	
 	producer.on('ready', function() {
