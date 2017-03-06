@@ -143,8 +143,8 @@ module.exports = function(RED) {
 	
 	  
     	consumer.on('data', function(m) {
-		node.log(JSON.stringify(m));
-		node.send({payload: m});
+		node.log(m.value.toString());
+		node.send({payload: m.value.toString()});
 	});
 	  
 	node.warn("consumer trying to connect.. "); 
