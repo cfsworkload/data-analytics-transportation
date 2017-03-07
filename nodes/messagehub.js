@@ -60,7 +60,7 @@ module.exports = function(RED) {
         payloads.push(msg.payload);
 		payloads.forEach(function (msg) { 
 			try {
-				var message = new Buffer(JSON.stringify(msg));
+				var message = new Buffer(msg);
 				producer.produce(topic, null, message); 
          			node.log(message);
 			} catch(e) {
