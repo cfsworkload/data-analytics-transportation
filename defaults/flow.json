@@ -259,7 +259,7 @@
     "type": "function",
     "z": "219e1bb0.2e6394",
     "name": "Get Time",
-    "func": "var d = new Date();\nvar n = d.getTime();\nvar hour    = d.getHours();\nvar minute  = d.getMinutes();\nvar second  = d.getSeconds(); \n\n\ncontext.global.ts3 = n;\ncontext.global.tf3 = hour + \":\" + minute + \":\" + second;\nreturn;",
+    "func": "var d = new Date();\nvar n = d.getTime();\nvar hour    = d.getHours();\nvar minute  = d.getMinutes();\nvar second  = d.getSeconds(); \n\n\ncontext.global.ts3 =  d.toISOString();\ncontext.global.tf3 = hour + \":\" + minute + \":\" + second;\nreturn;",
     "outputs": 1,
     "noerr": 0,
     "x": 231,
